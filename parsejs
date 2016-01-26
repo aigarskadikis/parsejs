@@ -1,0 +1,12 @@
+#!/usr/bin/python
+from mechanize import Browser
+import sys
+br = Browser()
+
+br.set_handle_robots( False )
+br.addheaders = [('User-agent', 'Firefox')]
+
+r = br.open(sys.argv[1])
+html = r.read()
+
+print html
